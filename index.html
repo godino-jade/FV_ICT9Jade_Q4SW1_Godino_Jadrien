@@ -115,7 +115,11 @@
             let inputusername = document.getElementById("username").value;
             let inputpw = document.getElementById("pw").value;
 
-            if (inputusername === "godino_jade" && inputpw === "november28_11") {
+            if(inputusername === "" || inputpw === "") {
+                alert("Please fill up the WHOLE form before clicking login.");
+            }
+
+            else if(inputusername === "godino_jade" && inputpw === "november28_11") {
                 alert("Welcome, godino_jade!");
             }
 
