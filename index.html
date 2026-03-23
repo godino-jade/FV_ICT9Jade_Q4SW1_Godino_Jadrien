@@ -52,10 +52,15 @@
         }
 
         #checkboxcontainer{
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+        } 
+
+        .row{
             display: flex;
             align-items: center;
-            justify-content: center;
-        } 
+        }
     </style>
 </head>
 <body>
@@ -70,18 +75,23 @@
                 <input type="text" id="username" class="form-control" placeholder="Enter username here...">
             </label>
 
-            <br><br>
+            <br>
 
             <label id="toptext">
                 <h6>Password</h6>
                 <input type="password" id="pw" class="form-control" placeholder="Enter password here...">
             </label>
 
-            <br><br>
+            <br>
 
             <div id="checkboxcontainer">
-                <input type="checkbox" id="login" onclick="session()">
-                    <label> Stay logged in</label>
+                <div class="row">
+                    <input type="checkbox" id="login" onclick="session()">
+                        <label> Stay logged in</label>
+                </div>
+
+                <br>
+                    
                 <div id="message"></div>
             </div>
 
@@ -121,6 +131,5 @@
             }
         }
     </script>
-    
 </body>
 </html>
