@@ -7,6 +7,15 @@
     <title>Q4 Seatwork 1</title>
 
     <style>
+        body{
+            background-color: rgb(118, 118, 118);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+    
         .container-fluid{
             width: 50%;
             margin: auto;
@@ -36,48 +45,57 @@
             <form>
                 <label> 
                     <h4>Username</h4>
-                    <input type="text" id=" " class="form-control" placeholder="Enter username here...">
+                    <input type="text" id="username" class="form-control" placeholder="Enter username here...">
                 </label>
 
                 <br><br>
 
                 <label>
                     <h4>Password</h4>
-                    <input type="password" id=" " class="form-control" placeholder="Enter password here...">
+                    <input type="password" id="pw" class="form-control" placeholder="Enter password here...">
                 </label>
 
                 <br><br>
 
-                <input type="checkbox" id="login"><label>Stay logged in</label>
+                <input type="checkbox" id="login" onclick="session()">
+                    <label> Stay logged in</label>
+                    <div id="message"></div>
+
+                <br>
 
                 <button type="button" class="btn btn-info" onclick="checkaccess()">Login</button>
+                <button type="button" class="btn btn-light" onclick="window.location.reload()">Cancel</button>
             </form>
 
     </div>
 
     <script>
-        function function_name_here() {
-            let staylogined = document.getElementById("login").checked //when checked, it reads true
+        function session() {
+            let staylogin = document.getElementById("login").checked //when checked, it reads true
+            let msgpopup = document.getElementById("message")
 
             switch(staylogin) {
                 case true:
-                //use inner html to display error msg
+                msgpopup.innerHTML = "Your session will stay active on this device.";
                 break;
 
                 case false:
-                // use inner html to show nothing, use quotations
+                messageBox.innerHTML = "";
                 break;
             }
         }
 
-        function function_name_here() {
-            var kWh = document.getElementById("kwh").value;
-            var kWh = document.getElementById("kwh").value;
-            
-            var username = godino_jade;
-            var pw = november28_11;
+        function checkaccess() {
+            let inputusername = document.getElementById("username").value;
+            let inputpw = document.getElementById("pw").value;
 
-            if ()
+            if (inputusername === "godino_jade" && inputpw === "november28_11") {
+                alert("Welcome, godino_jade!");
+            }
+
+            else{
+                alert("Incorrect username and/or password.");
+            }
         }
     </script>
     
